@@ -1,0 +1,178 @@
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #070707;
+    border-bottom: 1px solid #302e2c;
+}
+
+.navbar {
+    width: min(100% - 64px, 1440px);
+    min-height: 90px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+/* Logo */
+
+.navbar picture {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navbar .logo {
+    display: block;
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Navigation */
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar .nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+
+    color: #72706e;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: color 0.25s ease;
+}
+
+/* Animated underline */
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+    background: #d3cdc8;
+
+    transition: width 0.25s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #dedede;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Get a Quote */
+
+.navbar li:last-child .nav-link {
+    padding: 13px 20px;
+    border: 1px solid #72706e;
+    color: #d3cdc8;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.navbar li:last-child .nav-link::after {
+    display: none;
+}
+
+.navbar li:last-child .nav-link:hover {
+    background: #d3cdc8;
+    border-color: #d3cdc8;
+    color: #070707;
+}
+
+/* Profile */
+
+.navbar > :last-child {
+    flex-shrink: 0;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+    .navbar {
+        width: calc(100% - 40px);
+        gap: 20px;
+    }
+
+    .navbar .logo {
+        width: 120px;
+    }
+
+    .navbar ul {
+        gap: 20px;
+    }
+
+    .navbar .nav-link {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 720px) {
+    .navbar {
+        min-height: auto;
+        padding: 16px 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .navbar .logo {
+        width: 110px;
+    }
+
+    .navbar ul {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 24px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .navbar ul li {
+        flex-shrink: 0;
+    }
+
+    .navbar .nav-link {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar {
+        width: calc(100% - 28px);
+    }
+
+    .navbar ul {
+        gap: 18px;
+    }
+}

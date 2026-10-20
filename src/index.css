@@ -1,0 +1,278 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --dust-grey: #d8d2cc;
+    --alabaster-grey: #e8e6e3;
+
+    --black: #111110;
+    --black-pure: #080808;
+    --dim-grey: #92908d;
+
+    --background: #151514;
+    --surface: #1d1d1b;
+    --surface-hover: #272624;
+
+    --text-primary: var(--alabaster-grey);
+    --text-secondary: var(--dim-grey);
+
+    --border: #3a3835;
+
+    --font-heading: 'Barlow Condensed', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --container-width: 1280px;
+    --transition: 0.25s ease;
+}
+/* Reset */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Layout */
+
+.container {
+    width: min(100% - 48px, var(--container-width));
+    margin-inline: auto;
+}
+
+.section {
+    padding-block: 80px;
+}
+
+.section-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.section-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+/* Buttons */
+
+.btn {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 24px;
+    border: 1px solid transparent;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition:
+        color var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.btn-primary {
+    background: var(--dust-grey);
+    color: var(--black);
+}
+
+.btn-primary:hover {
+    background: var(--alabaster-grey);
+}
+
+.btn-outline {
+    border-color: var(--dim-grey);
+    background: transparent;
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--dust-grey);
+    background: var(--surface);
+}
+
+/* Forms */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    outline: none;
+    background: var(--surface);
+    color: var(--text-primary);
+    transition: border-color var(--transition);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--dim-grey);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--dust-grey);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Cards */
+
+.card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.card:hover {
+    border-color: var(--dim-grey);
+}
+
+/* Utilities */
+
+.text-muted {
+    color: var(--text-secondary);
+}
+
+.text-accent {
+    color: var(--dust-grey);
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+}
+
+/* Selection */
+
+::selection {
+    background: var(--dust-grey);
+    color: var(--black);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dim-grey);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dust-grey);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .container {
+        width: min(100% - 32px, var(--container-width));
+    }
+
+    .section {
+        padding-block: 56px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
