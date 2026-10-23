@@ -310,3 +310,19 @@
 .quote-notice.error {
   border-color: #a84d4d;
 }
+
+.windshield-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.windshield-option input {
+  width: 17px;
+  height: 17px;
+  accent-color: #d8d2cc;
+  cursor: pointer;
+}

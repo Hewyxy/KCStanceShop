@@ -43,7 +43,7 @@ export default function Navbar() {
           </li>
           <li>
             <a className="nav-link" href="/quote">
-              Get a Quote
+              Book Now!
             </a>
           </li>
         </ul>

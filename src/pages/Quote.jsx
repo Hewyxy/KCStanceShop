@@ -1,24 +1,30 @@
 import { useState, useRef, useEffect } from "react";
+import BookingModal from "../components/BookingModal";
 import "./Quote.css";
 
 const services = [
   "Vinyl Wrap",
-  "Window Tinting",
+  "Window Tinting(Sedan/Coupe)",
+  "Window Tinting(SUV/Truck)",
   "Suspension Work",
   "Exterior Installation",
   "Other",
 ];
-
 const estimates = {
   "Vinyl Wrap": {
     min: 1500,
     max: 3500,
     note: "Depends on vehicle size, vinyl, and coverage.",
   },
-  "Window Tinting": {
-    min: 200,
-    max: 600,
-    note: "Depends on vehicle and windows being tinted.",
+  "Window Tinting(Sedan/Coupe)": {
+    min: 300,
+    max: 500,
+    note: "Depends on windows being tinted.",
+  },
+  "Window Tinting(SUV/Truck)": {
+    min: 350,
+    max: 550,
+    note: "Depends on windows being tinted.",
   },
   "Suspension Work": {
     min: 300,
@@ -37,6 +43,10 @@ export default function Quote() {
   const [selectedService, setSelectedService] = useState("");
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState("");
+  const [windshieldTint, setWindshieldTint] = useState(false);
+
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [bookingVehicleType, setBookingVehicleType] = useState("sedan");
 
   const submittingRef = useRef(false);
 
@@ -53,6 +63,17 @@ export default function Quote() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+
+    if (
+      selectedService === "Window Tinting(Sedan/Coupe)" ||
+      selectedService === "Window Tinting(SUV/Truck)"
+    ) {
+      setBookingVehicleType(
+        selectedService === "Window Tinting(SUV/Truck)" ? "suv" : "sedan",
+      );
+      setBookingOpen(true);
+      return;
+    }
 
     if (submittingRef.current) return;
 
@@ -258,6 +279,7 @@ export default function Quote() {
                 </div>
               </div>
             </div>
+
             {selectedService && (
               <div className="estimate-box" aria-live="polite">
                 <span className="estimate-label">ESTIMATED QUOTE</span>
@@ -265,10 +287,40 @@ export default function Quote() {
                 {estimates[selectedService] ? (
                   <>
                     <strong>
-                      ${estimates[selectedService].min.toLocaleString("en-US")}
-                      {" – "}$
-                      {estimates[selectedService].max.toLocaleString("en-US")}
+                      {selectedService.startsWith("Window Tinting") ? (
+                        <>
+                          $
+                          {(
+                            estimates[selectedService].min +
+                            (windshieldTint ? 200 : 0)
+                          ).toLocaleString("en-US")}
+                        </>
+                      ) : (
+                        <>
+                          $
+                          {estimates[selectedService].min.toLocaleString(
+                            "en-US",
+                          )}
+                          {" – "}$
+                          {estimates[selectedService].max.toLocaleString(
+                            "en-US",
+                          )}
+                        </>
+                      )}
                     </strong>
+
+                    {selectedService.startsWith("Window Tinting") && (
+                      <label className="windshield-option">
+                        <input
+                          type="checkbox"
+                          checked={windshieldTint}
+                          onChange={(event) =>
+                            setWindshieldTint(event.target.checked)
+                          }
+                        />
+                        <span>Add windshield tint (+$200)</span>
+                      </label>
+                    )}
 
                     <p>{estimates[selectedService].note}</p>
                   </>
@@ -289,6 +341,7 @@ export default function Quote() {
               </div>
             )}
 
+            {/*
             <div className="quote-field">
               <label htmlFor="details">TELL US WHAT YOU NEED*</label>
               <textarea
@@ -348,18 +401,23 @@ export default function Quote() {
                 <option value="Text">Text message</option>
               </select>
             </div>
-
+            */}
             <button
               type="submit"
               className="btn btn-primary quote-submit"
               disabled={sending}
             >
-              {sending ? "SENDING REQUEST..." : "SEND QUOTE REQUEST"}
+              {sending ? "SENDING REQUEST..." : "BOOK NOW!"}
               {!sending && <span>↗</span>}
             </button>
           </form>
         </div>
       </section>
+      <BookingModal
+        isOpen={bookingOpen}
+        onClose={() => setBookingOpen(false)}
+        vehicleType={bookingVehicleType}
+      />
     </main>
   );
 }

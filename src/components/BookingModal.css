@@ -1,0 +1,160 @@
+
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+}
+
+.booking-modal {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 36px;
+  background: #f5f5f5;
+  color: #171717;
+}
+
+.booking-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  border: none;
+  background: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.booking-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.booking-modal h2 {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.1;
+}
+
+.booking-description,
+.booking-hint {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.booking-form label {
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background: #fff;
+  color: #171717;
+  font: inherit;
+}
+
+.booking-service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background: #e8e8e8;
+}
+
+.booking-service-info span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.booking-service-info small {
+  color: #666;
+}
+
+.booking-slots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.booking-slot {
+  padding: 12px 5px;
+  border: 1px solid #ccc;
+  background: white;
+  color: #171717;
+  cursor: pointer;
+}
+
+.booking-slot:hover,
+.booking-slot.selected {
+  border-color: #171717;
+  background: #171717;
+  color: white;
+}
+
+.booking-submit {
+  width: 100%;
+  margin-top: 12px;
+  padding: 16px;
+  border: none;
+  background: #171717;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.booking-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.booking-error {
+  padding: 12px;
+  background: #ffe5e5;
+  color: #a00000;
+  font-size: 14px;
+}
+
+.booking-success {
+  padding: 24px 0;
+}
+
+@media (max-width: 480px) {
+  .booking-modal {
+    padding: 28px 20px;
+  }
+
+  .booking-slots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.booking-price {
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
