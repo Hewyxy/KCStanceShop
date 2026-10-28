@@ -31,6 +31,8 @@ function Footer() {
         <p>© 2026 kcstanceshop LLC. All rights reserved.</p>
 
         <div className="footer-bottom-links">
+          <a href="#">Call: +1 (913)-111-1111</a>
+          <a href="#">Email: KCSTANCESHOP@EXPAMLE.com</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
         </div>

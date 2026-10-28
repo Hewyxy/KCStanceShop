@@ -326,3 +326,308 @@
   accent-color: #d8d2cc;
   cursor: pointer;
 }
+
+
+/* ========================================
+   QUOTE PAGE — ANIMATIONS
+======================================== */
+
+@keyframes quoteFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes quoteFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes quoteLineReveal {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes quoteNoticeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.quote-header {
+  animation: quoteFadeUp 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.quote-header h1 {
+  transition: letter-spacing 0.4s ease;
+}
+
+.quote-header h1 span,
+.quote-sidebar h2 span {
+  transition: color 0.3s ease;
+}
+
+/* Main content */
+.quote-sidebar {
+  animation: quoteFadeUp 0.8s ease 0.15s both;
+}
+
+.quote-sidebar-label {
+  display: inline-block;
+  animation: quoteFadeIn 0.6s ease 0.2s both;
+}
+
+.quote-sidebar h2 {
+  transition: transform 0.35s ease;
+}
+
+.quote-sidebar > p {
+  animation: quoteFadeUp 0.7s ease 0.25s both;
+}
+
+/* Steps */
+.quote-step {
+  transition:
+    padding-left 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.quote-step > span {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.quote-step:hover {
+  padding-left: 8px;
+  border-color: var(--dust-grey);
+}
+
+.quote-step:hover > span {
+  color: var(--text-primary);
+  transform: translateX(2px);
+}
+
+/* Form container */
+.quote-form-wrapper {
+  animation: quoteFadeUp 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s both;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.quote-form-wrapper:hover {
+  border-color: var(--border);
+}
+
+/* Form heading */
+.quote-form-heading {
+  position: relative;
+}
+
+.quote-form-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 64px;
+  height: 1px;
+  background: var(--dust-grey);
+  transform-origin: left;
+  animation: quoteLineReveal 0.7s ease 0.5s both;
+}
+
+.quote-form-heading h2 {
+  transition: transform 0.3s ease;
+}
+
+.quote-form-heading:hover h2 {
+  transform: translateX(3px);
+}
+
+/* Inputs */
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.quote-form input:hover,
+.quote-form select:hover,
+.quote-form textarea:hover {
+  border-color: var(--dim, #92908d);
+}
+
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+  border-color: var(--dust-grey);
+  box-shadow: 0 0 0 3px rgb(216 210 204 / 7%);
+}
+
+.quote-form input:focus-visible,
+.quote-form select:focus-visible,
+.quote-form textarea:focus-visible {
+  outline: none;
+}
+
+/* Labels */
+.quote-field > label,
+.quote-sub-label {
+  transition: color 0.25s ease;
+}
+
+.quote-field:focus-within > label,
+.quote-vehicle-grid > div:focus-within .quote-sub-label {
+  color: var(--dust-grey);
+}
+
+/* Estimate */
+.estimate-box {
+  animation: quoteFadeUp 0.45s ease both;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.estimate-box:hover {
+  border-color: var(--dust-grey);
+  transform: translateY(-2px);
+}
+
+.estimate-box strong {
+  transition: color 0.3s ease;
+}
+
+.estimate-box:hover strong {
+  color: var(--dust-grey);
+}
+
+/* Windshield checkbox */
+.windshield-option {
+  transition: color 0.25s ease;
+}
+
+.windshield-option:hover {
+  color: var(--text-primary);
+}
+
+.windshield-option input {
+  transition: transform 0.2s ease;
+}
+
+.windshield-option input:hover {
+  transform: scale(1.1);
+}
+
+/* Submit button */
+.quote-submit {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+.quote-submit:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+}
+
+.quote-submit:not(:disabled):active {
+  transform: translateY(0) scale(0.99);
+}
+
+.quote-submit:disabled {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success and error messages */
+.quote-notice {
+  animation: quoteNoticeIn 0.4s ease both;
+}
+
+.quote-notice.success {
+  border-left: 3px solid #477c57;
+}
+
+.quote-notice.error {
+  border-left: 3px solid #a84d4d;
+}
+
+/* Dividers */
+.quote-form-divider {
+  transition: border-color 0.3s ease;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .quote-sidebar,
+  .quote-form-wrapper {
+    animation-duration: 0.65s;
+  }
+
+  .quote-step:hover {
+    padding-left: 4px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .quote-header,
+  .quote-sidebar,
+  .quote-sidebar-label,
+  .quote-sidebar > p,
+  .quote-form-wrapper,
+  .quote-form-heading::after,
+  .estimate-box,
+  .quote-notice {
+    animation: none !important;
+  }
+
+  .quote-step,
+  .quote-step > span,
+  .quote-form input,
+  .quote-form select,
+  .quote-form textarea,
+  .quote-submit,
+  .estimate-box,
+  .estimate-box strong,
+  .windshield-option input,
+  .quote-form-heading h2 {
+    transition: none !important;
+  }
+
+  .quote-step:hover,
+  .estimate-box:hover,
+  .quote-submit:not(:disabled):hover {
+    transform: none;
+  }
+}

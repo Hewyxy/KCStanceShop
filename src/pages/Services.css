@@ -219,3 +219,318 @@
     transition: none;
   }
 }
+
+
+/* ========================================
+   SERVICES — ANIMATIONS
+======================================== */
+
+@keyframes servicesFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes servicesFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes servicesLineReveal {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes servicesImageReveal {
+  from {
+    opacity: 0.5;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Header entrance */
+.services-header {
+  animation: servicesFadeUp 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.services-header .section-label {
+  animation: servicesFadeIn 0.6s ease 0.15s both;
+}
+
+.services-header h1 {
+  transition: letter-spacing 0.4s ease;
+}
+
+.services-header h1 span {
+  display: inline-block;
+  transition:
+    color 0.3s ease,
+    transform 0.4s ease;
+}
+
+.services-header h1:hover span {
+  transform: translateX(4px);
+}
+
+.services-header > p {
+  animation: servicesFadeUp 0.8s ease 0.2s both;
+}
+
+/* Service rows */
+.service-item {
+  position: relative;
+  transition:
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 70px;
+  height: 1px;
+  background: var(--dust-grey);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s ease;
+}
+
+.service-item:hover::before {
+  transform: scaleX(1);
+}
+
+/* Alternate image and text entrances */
+.service-image {
+  isolation: isolate;
+}
+
+.service-image img {
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.5s ease;
+}
+
+.service-item:hover .service-image img {
+  transform: scale(1.065);
+  filter: contrast(1.06);
+}
+
+.service-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgb(0 0 0 / 35%) 100%
+  );
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.service-item:hover .service-image::after {
+  opacity: 1;
+}
+
+/* Image index */
+.service-index {
+  z-index: 2;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.service-item:hover .service-index {
+  transform: translateY(-5px);
+  color: var(--dust-grey);
+}
+
+/* Service text */
+.service-text {
+  transition: transform 0.4s ease;
+}
+
+.service-item:hover .service-text {
+  transform: translateX(3px);
+}
+
+.service-number {
+  display: inline-block;
+  transition:
+    color 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+.service-item:hover .service-number {
+  color: var(--dust-grey);
+  letter-spacing: 3px;
+}
+
+.service-text h2 {
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.service-item:hover .service-text h2 {
+  transform: translateX(3px);
+}
+
+.service-text p {
+  transition: color 0.3s ease;
+}
+
+/* Duration label */
+.service-duration {
+  transition:
+    border-color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.service-item:hover .service-duration {
+  padding-left: 18px;
+  border-color: var(--text-primary);
+}
+
+.duration-value {
+  transition: color 0.3s ease;
+}
+
+.service-item:hover .duration-value {
+  color: var(--dust-grey);
+}
+
+/* Service links */
+.service-link {
+  position: relative;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.service-link:hover {
+  gap: 18px;
+}
+
+.service-link:focus-visible {
+  outline: 2px solid var(--dust-grey);
+  outline-offset: 5px;
+}
+
+/* CTA section */
+.get-quote-section {
+  overflow: hidden;
+}
+
+.get-quote-section h2 {
+  transition: transform 0.4s ease;
+}
+
+.get-quote-section:hover h2 {
+  transform: translateY(-3px);
+}
+
+.get-quote-section h2 span {
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.get-quote-section:hover h2 span {
+  transform: translateX(3px);
+}
+
+.get-quote-section > p {
+  animation: servicesFadeUp 0.7s ease both;
+}
+
+/* CTA button, if using a link or button */
+.get-quote-section a,
+.get-quote-section button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+.get-quote-section a:hover,
+.get-quote-section button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+}
+
+.get-quote-section a:active,
+.get-quote-section button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Mobile refinements */
+@media (max-width: 768px) {
+  .service-item:hover .service-text {
+    transform: none;
+  }
+
+  .service-item:hover .service-duration {
+    padding-left: 14px;
+  }
+
+  .service-item:hover .service-text h2 {
+    transform: none;
+  }
+
+  .get-quote-section:hover h2 {
+    transform: none;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .services-header,
+  .services-header .section-label,
+  .services-header > p,
+  .get-quote-section > p {
+    animation: none !important;
+  }
+
+  .service-item,
+  .service-item::before,
+  .service-image img,
+  .service-image::after,
+  .service-index,
+  .service-text,
+  .service-number,
+  .service-text h2,
+  .service-duration,
+  .duration-value,
+  .service-link,
+  .get-quote-section h2,
+  .get-quote-section h2 span,
+  .get-quote-section a,
+  .get-quote-section button {
+    transition: none !important;
+  }
+
+  .service-item:hover .service-image img {
+    transform: none;
+  }
+}

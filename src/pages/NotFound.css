@@ -1,5 +1,8 @@
 
 .not-found {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     min-height: 70vh;
     display: flex;
     flex-direction: column;
@@ -12,12 +15,57 @@
     font-family: "Inter", sans-serif;
 }
 
+/* Background glow */
+.not-found::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(70vw, 600px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgb(146 144 141 / 10%) 0%,
+        rgb(146 144 141 / 3%) 40%,
+        transparent 70%
+    );
+    animation: notFoundGlow 6s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.not-found::after {
+    content: "404";
+    position: absolute;
+    z-index: -1;
+    font-size: clamp(180px, 35vw, 440px);
+    font-weight: 900;
+    letter-spacing: -0.09em;
+    line-height: 1;
+    color: rgb(222 222 222 / 2.5%);
+    user-select: none;
+    pointer-events: none;
+    animation: notFoundDrift 8s ease-in-out infinite alternate;
+}
+
 .not-found h1 {
+    position: relative;
     margin: 0 0 16px;
     font-size: clamp(36px, 6vw, 72px);
     font-weight: 800;
     letter-spacing: -2px;
     text-transform: uppercase;
+    animation: notFoundEntrance 0.8s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.not-found h1::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: 18px auto 0;
+    background: #92908d;
+    transform-origin: center;
+    animation: notFoundLine 0.7s ease 0.4s both;
 }
 
 .not-found p {
@@ -26,8 +74,92 @@
     color: #72706e;
     font-size: 16px;
     line-height: 1.7;
+    animation: notFoundEntrance 0.8s ease 0.15s both;
 }
 
+/* Optional home button */
+.not-found a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 28px;
+    padding: 13px 22px;
+    border: 1px solid #3a3835;
+    background: transparent;
+    color: #dedede;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+    animation: notFoundEntrance 0.8s ease 0.3s both;
+}
+
+.not-found a:hover {
+    transform: translateY(-3px);
+    border-color: #dedede;
+    background: #dedede;
+    color: #070707;
+}
+
+.not-found a:active {
+    transform: translateY(0) scale(0.97);
+}
+
+.not-found a:focus-visible {
+    outline: 2px solid #92908d;
+    outline-offset: 5px;
+}
+
+/* Animations */
+@keyframes notFoundEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes notFoundLine {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes notFoundGlow {
+    from {
+        transform: translate(-5%, -3%) scale(0.9);
+        opacity: 0.6;
+    }
+    to {
+        transform: translate(5%, 3%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes notFoundDrift {
+    from {
+        transform: translate(-8px, 8px);
+    }
+    to {
+        transform: translate(8px, -8px);
+    }
+}
+
+/* Mobile */
 @media (max-width: 500px) {
     .not-found {
         min-height: 60vh;
@@ -40,5 +172,25 @@
 
     .not-found p {
         font-size: 14px;
+    }
+
+    .not-found::after {
+        font-size: 55vw;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .not-found::before,
+    .not-found::after,
+    .not-found h1,
+    .not-found h1::after,
+    .not-found p,
+    .not-found a {
+        animation: none !important;
+    }
+
+    .not-found a {
+        transition: none;
     }
 }

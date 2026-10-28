@@ -314,3 +314,331 @@
     transition: none;
   }
 }
+
+
+/* ========================================
+   ABOUT PAGE — ANIMATIONS
+======================================== */
+
+@keyframes aboutFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aboutFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes aboutImageReveal {
+  from {
+    opacity: 0.65;
+    transform: scale(1.045);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes aboutLineReveal {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Header */
+.about-header {
+  animation: aboutFadeUp 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.about-header .section-label {
+  animation: aboutFadeIn 0.6s ease 0.15s both;
+}
+
+.about-header h1 span,
+.about-intro-text h2 span,
+.about-values-heading h2 span,
+.about-cta h2 span {
+  display: inline-block;
+  transition:
+    color 0.3s ease,
+    transform 0.35s ease;
+}
+
+.about-header h1:hover span,
+.about-intro-text h2:hover span,
+.about-values-heading h2:hover span,
+.about-cta h2:hover span {
+  transform: translateX(3px);
+}
+
+.about-header > p {
+  animation: aboutFadeUp 0.8s ease 0.2s both;
+}
+
+/* Intro section */
+.about-intro-image {
+  isolation: isolate;
+}
+
+.about-intro-image img {
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.5s ease;
+}
+
+.about-intro-image:hover img {
+  transform: scale(1.055);
+  filter: contrast(1.05);
+}
+
+.about-image-label {
+  z-index: 2;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    padding 0.3s ease;
+}
+
+.about-intro-image:hover .about-image-label {
+  padding-right: 22px;
+  color: var(--dust-grey);
+}
+
+.about-intro-text h2 {
+  transition: transform 0.35s ease;
+}
+
+.about-intro-text > p {
+  animation: aboutFadeUp 0.7s ease both;
+}
+
+.about-intro-text > p:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+/* Values heading */
+.about-values-heading {
+  animation: aboutFadeUp 0.7s ease both;
+}
+
+/* Values list */
+.about-values-list {
+  position: relative;
+}
+
+.about-value {
+  position: relative;
+  transition:
+    padding-left 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.about-value::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 48px;
+  height: 1px;
+  background: var(--dust-grey);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.about-value:hover {
+  padding-left: 8px;
+  border-color: var(--dust-grey);
+}
+
+.about-value:hover::before {
+  transform: scaleX(1);
+}
+
+.about-value-number {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-value:hover .about-value-number {
+  color: var(--text-primary);
+  transform: translateX(2px);
+}
+
+.about-value h3 {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-value:hover h3 {
+  color: var(--dust-grey);
+  transform: translateX(2px);
+}
+
+.about-value p {
+  transition: color 0.3s ease;
+}
+
+.about-value-arrow {
+  display: inline-block;
+  transition:
+    color 0.3s ease,
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.about-value:hover .about-value-arrow {
+  color: var(--text-primary);
+  transform: translate(3px, -3px);
+}
+
+/* CTA */
+.about-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-cta h2 {
+  transition: transform 0.4s ease;
+}
+
+.about-cta:hover h2 {
+  transform: translateY(-3px);
+}
+
+.about-cta > p {
+  animation: aboutFadeUp 0.7s ease 0.1s both;
+}
+
+.about-cta a,
+.about-cta button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-cta a:hover,
+.about-cta button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+}
+
+.about-cta a:active,
+.about-cta button:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   LOCATION — ANIMATIONS
+======================================== */
+
+.Location {
+  position: relative;
+}
+
+.location {
+  animation: aboutFadeUp 0.8s ease both;
+  transition: border-color 0.35s ease;
+}
+
+.location:hover {
+  border-color: var(--dim-grey, #3a3835);
+}
+
+.location-info h2 {
+  transition: transform 0.35s ease;
+}
+
+.location-info a {
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+.location-info a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 18%);
+}
+
+.location-info a:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.location-info a:focus-visible {
+  outline: 2px solid var(--dust-grey);
+  outline-offset: 4px;
+}
+
+/* Map */
+.location-map {
+  transition:
+    filter 0.5s ease,
+    border-color 0.35s ease;
+}
+
+.location:hover .location-map {
+  filter: grayscale(55%);
+  border-color: var(--dust-grey);
+}
+
+/* Mobile refinements */
+@media (max-width: 768px) {
+  .about-value:hover {
+    padding-left: 4px;
+  }
+
+  .about-cta:hover h2 {
+    transform: none;
+  }
+
+  .location-map {
+    filter: grayscale(70%);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .about-header,
+  .about-header .section-label,
+  .about-header > p,
+  .about-intro-text > p,
+  .about-values-heading,
+  .about-cta > p,
+  .location {
+    animation: none !important;
+  }
+
+  .about-page *,
+  .Location *,
+  .location * {
+    scroll-behavior: auto;
+    transition: none !important;
+  }
+
+  .about-value:hover,
+  .about-value:hover .about-value-arrow,
+  .about-intro-image:hover img,
+  .location-info a:hover,
+  .about-cta:hover h2 {
+    transform: none;
+  }
+}
