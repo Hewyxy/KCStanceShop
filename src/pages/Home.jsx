@@ -29,10 +29,30 @@ const services = [
 ];
 
 const galleryItems = [
-  { number: "01", title: "Featured Build" },
-  { number: "02", title: "Custom Wrap" },
-  { number: "03", title: "Stance Setup" },
-  { number: "04", title: "Shop Projects" },
+  {
+    number: "01",
+    title: "Featured Build",
+    image: "MurfGTR.jpg",
+    position: "center 80%",
+  },
+  {
+    number: "02",
+    title: "Custom Wrap",
+    image: "c7.jpg",
+    position: "center 70%",
+  },
+  {
+    number: "03",
+    title: "Stance Setup",
+    image: "z.jpg",
+    position: "center 60%",
+  },
+  {
+    number: "04",
+    title: "Shop Projects",
+    image: "shop.jpg",
+    position: "center 70%",
+  },
 ];
 
 export default function Home() {
@@ -148,8 +168,18 @@ export default function Home() {
 
         <div className="gallery-list">
           {galleryItems.map((item) => (
-            <a href="/gallery" className="gallery-card" key={item.number}>
+            <a
+              href={`/gallery/${item.image}`}
+              className="gallery-card"
+              key={item.number}
+            >
               <div className="gallery-placeholder">
+                <img
+                  src={`/gallery/${item.image}`}
+                  alt={item.title}
+                  loading="lazy"
+                  style={{ objectPosition: item.position || "center" }}
+                />
                 <span>{item.number}</span>
               </div>
 

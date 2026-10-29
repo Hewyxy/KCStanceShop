@@ -45,7 +45,7 @@ export default function About() {
       <section className="about-intro container">
         <div className="about-intro-image">
           <img
-            src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/500050720_1292537992875893_2101578564119359374_n.jpg?stp=dst-jpg_tt6&cstp=mx1152x2048&ctp=s1152x2048&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=D2uELjeq8skQ7kNvwE1kL-I&_nc_oc=Adoy_-WqSeoBI4p2tGtaWQcvzt9d2hlEVPSA-dSLOR_zvlLlr4JLH66eluszEziC6AA&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=wY965gQP4kfgNnvJxy9QLg&_nc_ss=7b2a8&oh=00_AQNegBSirZPviyqLzcTkDoys4ln9SVj8gXlAfgvQFKahaA&oe=6AE1A6E4"
+            src="gallery/shop.jpg"
             alt="Automotive customization at KC Stance Shop"
             loading="lazy"
           />
