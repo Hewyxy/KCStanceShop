@@ -97,6 +97,7 @@ The frontend calls these routes on the backend:
 
 | Method | Route | Purpose |
 | --- | --- | --- |
+| `GET` | `/api/health` | Confirm that the API function is responding |
 | `GET` | `/api/services` | List active bookable services |
 | `GET` | `/api/availability?serviceId=…&date=YYYY-MM-DD` | Return available booking slots |
 | `POST` | `/api/appointments` | Create an appointment request |
@@ -114,7 +115,9 @@ npm run build
 
 This runs Vite and then `scripts/generate-seo-pages.mjs`, which writes route-specific HTML metadata for `/services`, `/gallery`, `/about`, and `/quote` into `dist/`. Vercel serves those pages using the rewrites in `vercel.json`; the remaining paths use the SPA fallback.
 
-Deploy the frontend as a Vite project with the repository root as its project root. Deploy `backend/` as a separate Node.js service and configure its environment variables there. Set the frontend's `VITE_API_URL` to the deployed API origin and the API's `FRONTEND_URL` to the deployed website origin.
+Deploy the repository root as a Vite project on Vercel. The `api/index.js` entry exports the Express app as a Vercel Function, and `vercel.json` routes `/api/*` requests to it. The install command installs both the root frontend and `backend/` dependencies.
+
+In Vercel Project Settings → Environment Variables, configure `DATABASE_URL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, and `SHOP_EMAIL`. `FRONTEND_URL` is only needed if the API is called cross-origin; when the frontend and API use the same Vercel domain, leave `VITE_API_URL` unset and the frontend will call `/api/*` on its own origin. Set these values for the Production and Preview environments as needed.
 
 The sitemap is available at `/sitemap.xml` and the crawler rules at `/robots.txt`. After deploying, submit the sitemap in Google Search Console.
 

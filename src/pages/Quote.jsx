@@ -3,6 +3,11 @@ import BookingModal from "../components/BookingModal";
 import SEO from "../components/SEO";
 import "./Quote.css";
 
+const API_URL = (
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV ? "http://localhost:5000" : "")
+).replace(/\/$/, "");
+
 const services = [
   "Vinyl Wrap",
   "Window Tinting(Sedan/Coupe)",
@@ -108,7 +113,7 @@ export default function Quote() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/quote`,
+        `${API_URL}/api/quote`,
         {
           method: "POST",
           headers: {
