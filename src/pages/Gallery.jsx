@@ -80,7 +80,7 @@ export default function Gallery() {
         <span className="section-label">KC STANCE SHOP / OUR WORK</span>
 
         <h1>
-          THE <span>GALLERY.</span>
+          PAST <span>PROJECTS.</span>
         </h1>
 
         <p>

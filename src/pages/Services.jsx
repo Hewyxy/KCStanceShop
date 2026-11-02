@@ -93,14 +93,14 @@ export default function Services() {
                 <span className="duration-value">{service.duration}</span>
               </div>
 
-              <Link to="/quote" className="service-link">
-                DISCUSS YOUR BUILD <span>↗︎</span>
+              <Link to="/quote" className="service-cta">
+                Request a Quote
+                <span>→</span>
               </Link>
             </div>
           </article>
         ))}
       </section>
-
     </main>
   );
 }

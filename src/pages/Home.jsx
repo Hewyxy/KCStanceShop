@@ -102,8 +102,12 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <Link to="/services" className="btn btn-primary">
-              Explore Services <span>↗︎</span>
+            <Link to="/quote" className="btn btn-primary">
+              Book now<span>↗︎</span>
+            </Link>
+
+            <Link to="/services" className="btn btn-secondary">
+              Explore Services 
             </Link>
 
             <Link to="/gallery" className="btn btn-secondary">

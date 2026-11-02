@@ -25,7 +25,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link className="nav-link" id="senter" to="/gallery">
-              Gallery
+              Past Projects
             </Link>
           </li>
           <li>

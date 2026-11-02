@@ -141,39 +141,59 @@
 @media (max-width: 720px) {
     .navbar {
         min-height: auto;
-        padding: 16px 0;
+        width: calc(100% - 32px);
+        padding: 12px 0 8px;
         flex-wrap: wrap;
         justify-content: space-between;
+        gap: 8px 16px;
     }
 
     .navbar .logo {
-        width: 110px;
+        width: 104px;
     }
 
     .navbar ul {
         order: 3;
         width: 100%;
         justify-content: flex-start;
-        gap: 24px;
+        gap: clamp(12px, 4vw, 20px);
         overflow-x: auto;
-        padding-bottom: 4px;
+        padding: 2px 0 6px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+    }
+
+    .navbar ul::-webkit-scrollbar {
+        display: none;
     }
 
     .navbar ul li {
         flex-shrink: 0;
+        scroll-snap-align: start;
     }
 
     .navbar .nav-link {
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
         font-size: 10px;
+    }
+
+    .navbar li:last-child .nav-link {
+        min-height: 38px;
+        padding: 0 12px;
     }
 }
 
 @media (max-width: 400px) {
     .navbar {
-        width: calc(100% - 28px);
+        width: calc(100% - 32px);
     }
 
     .navbar ul {
-        gap: 18px;
+        gap: 14px;
     }
 }
