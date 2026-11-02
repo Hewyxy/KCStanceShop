@@ -4,8 +4,9 @@
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: #070707;
-    border-bottom: 1px solid #302e2c;
+    background: rgb(9 11 16 / 92%);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
 }
 
 .navbar {
@@ -52,7 +53,7 @@
     display: inline-block;
     padding: 10px 0;
 
-    color: #72706e;
+    color: var(--text-secondary);
     font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-weight: 600;
@@ -72,13 +73,13 @@
 
     width: 0;
     height: 2px;
-    background: #d3cdc8;
+    background: var(--accent);
 
     transition: width 0.25s ease;
 }
 
 .navbar .nav-link:hover {
-    color: #dedede;
+    color: var(--text-primary);
 }
 
 .navbar .nav-link:hover::after {
@@ -89,8 +90,8 @@
 
 .navbar li:last-child .nav-link {
     padding: 13px 20px;
-    border: 1px solid #72706e;
-    color: #d3cdc8;
+    border: 1px solid var(--accent);
+    color: var(--accent-bright);
     transition:
         background 0.25s ease,
         color 0.25s ease,
@@ -102,9 +103,9 @@
 }
 
 .navbar li:last-child .nav-link:hover {
-    background: #d3cdc8;
-    border-color: #d3cdc8;
-    color: #070707;
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #160b08;
 }
 
 /* Profile */

@@ -17,7 +17,7 @@
 .location-info a {
   display: inline-block;
   margin-top: 12px;
-  color: #6c3fa0;
+  color: var(--accent-bright);
   text-decoration: none;
   font-weight: 600;
 }

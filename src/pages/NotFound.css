@@ -9,8 +9,8 @@
     justify-content: center;
     align-items: center;
     padding: 40px 24px;
-    background: #070707;
-    color: #dedede;
+    background: var(--black);
+    color: var(--text-primary);
     text-align: center;
     font-family: "Inter", sans-serif;
 }
@@ -25,8 +25,8 @@
     border-radius: 50%;
     background: radial-gradient(
         circle,
-        rgb(146 144 141 / 10%) 0%,
-        rgb(146 144 141 / 3%) 40%,
+        rgb(136 201 54 / 12%) 0%,
+        rgb(84 214 206 / 5%) 40%,
         transparent 70%
     );
     animation: notFoundGlow 6s ease-in-out infinite alternate;
@@ -41,7 +41,7 @@
     font-weight: 900;
     letter-spacing: -0.09em;
     line-height: 1;
-    color: rgb(222 222 222 / 2.5%);
+    color: rgb(243 245 248 / 2.5%);
     user-select: none;
     pointer-events: none;
     animation: notFoundDrift 8s ease-in-out infinite alternate;
@@ -63,7 +63,7 @@
     width: 56px;
     height: 3px;
     margin: 18px auto 0;
-    background: #92908d;
+    background: var(--accent);
     transform-origin: center;
     animation: notFoundLine 0.7s ease 0.4s both;
 }
@@ -71,7 +71,7 @@
 .not-found p {
     margin: 0;
     max-width: 420px;
-    color: #72706e;
+    color: var(--text-secondary);
     font-size: 16px;
     line-height: 1.7;
     animation: notFoundEntrance 0.8s ease 0.15s both;
@@ -86,7 +86,7 @@
     padding: 13px 22px;
     border: 1px solid #3a3835;
     background: transparent;
-    color: #dedede;
+    color: var(--text-primary);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -102,9 +102,9 @@
 
 .not-found a:hover {
     transform: translateY(-3px);
-    border-color: #dedede;
-    background: #dedede;
-    color: #070707;
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--black);
 }
 
 .not-found a:active {
@@ -112,7 +112,7 @@
 }
 
 .not-found a:focus-visible {
-    outline: 2px solid #92908d;
+    outline: 2px solid var(--accent);
     outline-offset: 5px;
 }
 

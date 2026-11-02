@@ -5,7 +5,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <img src="https://kcstanceshop.com/wp-content/uploads/2025/07/b010e7a5-1aa0-4482-ba5b-ecf2824e0f7c-1024x531.png" alt="kcstanceshop Logo" />
+          <img src="https://kcstanceshop.com/wp-content/uploads/2025/07/b010e7a5-1aa0-4482-ba5b-ecf2824e0f7c-1024x531.png" alt="KCSTANCESHOP logo" />
           <p>
             Industry Leading Customization Experts Bring your dreams to reality
           </p>
@@ -28,7 +28,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 kcstanceshop LLC. All rights reserved.</p>
+        <p>© 2026 KCSTANCESHOP LLC. All rights reserved.</p>
 
         <div className="footer-bottom-links">
           <a href="#">Call: +1 (913)-111-1111</a>

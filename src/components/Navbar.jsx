@@ -16,7 +16,7 @@ export default function Navbar() {
         <a href="/" className="logo-link">
           <img
             src="https://kcstanceshop.com/wp-content/uploads/2025/07/b010e7a5-1aa0-4482-ba5b-ecf2824e0f7c-1024x531.png"
-            alt="KCStanceShop"
+            alt="KCSTANCESHOP"
             className="logo"
           />
         </a>

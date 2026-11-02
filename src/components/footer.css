@@ -1,8 +1,8 @@
 
 .footer {
-    background: #070707;
-    color: #dedede;
-    border-top: 1px solid #302e2c;
+    background: #090b10;
+    color: var(--text-primary);
+    border-top: 1px solid var(--border);
     padding: 64px 32px 24px;
     font-family: "Inter", sans-serif;
 }
@@ -31,7 +31,7 @@
 }
 
 .footer-brand p {
-    color: #72706e;
+    color: var(--text-secondary);
     font-size: 14px;
     line-height: 1.8;
     max-width: 300px;
@@ -47,7 +47,7 @@
 }
 
 .footer-section h3 {
-    color: #dedede;
+    color: var(--accent-bright);
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
@@ -58,7 +58,7 @@
 .footer-section a,
 .footer-bottom-links a {
     position: relative;
-    color: #72706e;
+    color: var(--text-secondary);
     font-size: 14px;
     text-decoration: none;
     transition: color 0.25s ease;
@@ -66,7 +66,7 @@
 
 .footer-section a:hover,
 .footer-bottom-links a:hover {
-    color: #dedede;
+    color: var(--accent-bright);
 }
 
 /* Bottom area */
@@ -74,7 +74,7 @@
     width: min(100%, 1440px);
     margin: 0 auto;
     padding-top: 24px;
-    border-top: 1px solid #302e2c;
+    border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,7 +82,7 @@
 }
 
 .footer-bottom p {
-    color: #72706e;
+    color: var(--text-secondary);
     font-size: 12px;
     line-height: 1.6;
     margin: 0;

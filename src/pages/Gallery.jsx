@@ -6,6 +6,7 @@ const projects = [
   {
     title: "CUSTOM WRAP",
     category: "Vinyl Wrap",
+    description: "A custom color and finish that gives the car a whole new look.",
     image:
       "https://kcstanceshop.com/wp-content/uploads/2025/07/unnamed_4_900x-768x1024.webp",
     alt: "Custom vehicle wrap",
@@ -13,6 +14,7 @@ const projects = [
   {
     title: "STREET SPEC",
     category: "Suspension",
+    description: "A low, balanced stance with fitment tuned for the street.",
     image:
       "gallery/GTR.jpg",
     alt: "Modified street car",
@@ -21,6 +23,7 @@ const projects = [
   {
     title: "DARK FINISH",
     category: "Window Tinting",
+    description: "Clean window tint for added privacy and a sharper profile.",
     image:
       "gallery/must.jpg",
     alt: "Vehicle window tinting",
@@ -29,6 +32,7 @@ const projects = [
   {
     title: "DETAIL WORK",
     category: "Exterior",
+    description: "Small exterior upgrades that bring the full build together.",
     image:
       "gallery/MurfGTR.jpg",
     alt: "Custom exterior modifications",
@@ -37,6 +41,7 @@ const projects = [
   {
     title: "LOW PROFILE",
     category: "Suspension",
+    description: "Dialed-in ride height and wheel fitment for a planted look.",
     image:
       "gallery/z.jpg",
     alt: "Lowered vehicle",
@@ -45,6 +50,7 @@ const projects = [
   {
     title: "FINAL TOUCH",
     category: "Exterior",
+    description: "Finishing details that make this custom setup stand out.",
     image:
       "gallery/240.jpg",
     alt: "Automotive customization details",
@@ -120,7 +126,14 @@ export default function Gallery() {
                   {String(projects.indexOf(project) + 1).padStart(2, "0")}
                 </span>
 
-                <span className="gallery-project-open">VIEW ↗</span>
+                <div className="gallery-project-overlay" aria-hidden="true">
+                  <span className="gallery-project-category">
+                    {project.category}
+                  </span>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <span className="gallery-project-open">VIEW ↗</span>
+                </div>
               </div>
 
               <div className="gallery-project-info">

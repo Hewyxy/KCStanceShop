@@ -270,7 +270,7 @@
     border: 1px solid var(--border);
     border-radius: 2px;
 
-    filter: grayscale(100%);
+    filter: saturate(1.15) contrast(1.04);
 }
 
 /* Tablet */
@@ -596,7 +596,7 @@
 }
 
 .location:hover .location-map {
-  filter: grayscale(55%);
+  filter: saturate(1.2) contrast(1.05);
   border-color: var(--dust-grey);
 }
 
@@ -611,7 +611,7 @@
   }
 
   .location-map {
-    filter: grayscale(70%);
+    filter: saturate(1.1);
   }
 }
 

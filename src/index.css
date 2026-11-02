@@ -2,21 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-    --dust-grey: #d8d2cc;
-    --alabaster-grey: #e8e6e3;
+    --dust-grey: #88c936;
+    --alabaster-grey: #e8f5d6;
 
-    --black: #111110;
-    --black-pure: #080808;
-    --dim-grey: #92908d;
+    --black: #0b0d12;
+    --black-pure: #090b10;
+    --dim-grey: #8b98aa;
 
-    --background: #151514;
-    --surface: #1d1d1b;
-    --surface-hover: #272624;
+    --background: #0d1119;
+    --surface: #141b27;
+    --surface-hover: #1c2736;
 
-    --text-primary: var(--alabaster-grey);
-    --text-secondary: var(--dim-grey);
+    --text-primary: #f3f5f8;
+    --text-secondary: #aab4c3;
 
-    --border: #3a3835;
+    --border: #293648;
+    --accent: #88c936;
+    --accent-bright: #a5df55;
+    --accent-cool: #65d6ae;
+    --glow: rgb(136 201 54 / 16%);
 
     --font-heading: 'Barlow Condensed', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -41,6 +45,13 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-image:
+        radial-gradient(ellipse at 80% 0%, rgb(36 81 111 / 13%), transparent 42%),
+        radial-gradient(ellipse at 0% 45%, rgb(136 201 54 / 5%), transparent 34%);
+    background-attachment: fixed;
 }
 
 #root {
@@ -146,16 +157,24 @@ p {
     transition:
         color var(--transition),
         background var(--transition),
-        border-color var(--transition);
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .btn-primary {
-    background: var(--dust-grey);
-    color: var(--black);
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #160b08;
+    box-shadow: 0 8px 28px var(--glow);
 }
 
 .btn-primary:hover {
-    background: var(--alabaster-grey);
+    border-color: var(--accent-bright);
+    background: var(--accent-bright);
+    color: #160b08;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 34px rgb(136 201 54 / 25%);
 }
 
 .btn-outline {
@@ -167,6 +186,13 @@ p {
 .btn-outline:hover {
     border-color: var(--dust-grey);
     background: var(--surface);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-cool);
+    outline-offset: 4px;
 }
 
 /* Forms */
@@ -192,7 +218,8 @@ textarea::placeholder {
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--dust-grey);
+    border-color: var(--accent-cool);
+    box-shadow: 0 0 0 3px rgb(84 214 206 / 10%);
 }
 
 textarea {
@@ -233,8 +260,8 @@ textarea {
 /* Selection */
 
 ::selection {
-    background: var(--dust-grey);
-    color: var(--black);
+    background: var(--accent);
+    color: #160b08;
 }
 
 /* Scrollbar */

@@ -4,7 +4,7 @@ import "./Home.css";
 const services = [
   {
     number: "01",
-    title: "Window Tints",
+    title: "Window Tint",
     description:
       "Enhance privacy, reduce glare, and give your vehicle a cleaner look.",
   },
@@ -82,7 +82,7 @@ export default function Home() {
       {/* Hero */}
       <section className="home-hero">
         <div className="hero-content">
-          <span className="hero-label">KcStanceshop | Kansas City</span>
+          <span className="hero-label">KCSTANCESHOP | Kansas City</span>
 
           <h1>
             STANCE IS A
