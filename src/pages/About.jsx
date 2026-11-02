@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import Location from "../components/Location";
 import "./About.css";
 
@@ -26,6 +27,10 @@ const values = [
 export default function About() {
   return (
     <main className="about-page">
+      <SEO
+        title="About KCSTANCESHOP | Olathe Vehicle Restyling Shop"
+        description="Meet KCSTANCESHOP, an automotive restyling shop in Olathe, KS serving Kansas City with custom vehicle wraps, window tint, suspension, and exterior upgrades."
+      />
       <header className="about-header container">
         <span className="section-label">KC STANCE SHOP / ABOUT US</span>
 
@@ -48,6 +53,7 @@ export default function About() {
             src="gallery/shop.jpg"
             alt="Automotive customization at KC Stance Shop"
             loading="lazy"
+            decoding="async"
           />
           <span className="about-image-label">KC / AUTOMOTIVE CULTURE</span>
         </div>

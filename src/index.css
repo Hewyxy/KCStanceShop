@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
     --dust-grey: #88c936;
     --alabaster-grey: #e8f5d6;
@@ -62,6 +60,10 @@ body {
 
 main {
     flex: 1;
+}
+
+.route-loading {
+    min-height: 60vh;
 }
 
 img {

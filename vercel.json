@@ -1,6 +1,14 @@
 
 {
   "rewrites": [
+    { "source": "/services", "destination": "/services/index.html" },
+    { "source": "/services/", "destination": "/services/index.html" },
+    { "source": "/gallery", "destination": "/gallery/index.html" },
+    { "source": "/gallery/", "destination": "/gallery/index.html" },
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/about/", "destination": "/about/index.html" },
+    { "source": "/quote", "destination": "/quote/index.html" },
+    { "source": "/quote/", "destination": "/quote/index.html" },
     {
       "source": "/(.*)",
       "destination": "/index.html"

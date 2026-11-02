@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import BookingModal from "../components/BookingModal";
+import SEO from "../components/SEO";
 import "./Quote.css";
 
 const services = [
@@ -149,6 +150,10 @@ export default function Quote() {
   }
   return (
     <main className="quote-page">
+      <SEO
+        title="Request a Vehicle Restyling Quote | KCSTANCESHOP"
+        description="Request a quote for vehicle wraps, window tint, suspension, or exterior upgrades from KCSTANCESHOP in Olathe, KS. Tell us about your vehicle and project."
+      />
       <header className="quote-header container">
         <span className="section-label">KC STANCE SHOP / LET'S TALK</span>
 

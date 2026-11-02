@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 function Footer() {
@@ -7,16 +8,17 @@ function Footer() {
         <div className="footer-brand">
           <img src="https://kcstanceshop.com/wp-content/uploads/2025/07/b010e7a5-1aa0-4482-ba5b-ecf2824e0f7c-1024x531.png" alt="KCSTANCESHOP logo" />
           <p>
-            Industry Leading Customization Experts Bring your dreams to reality
+            Vehicle wraps, window tint, suspension upgrades, and exterior
+            restyling in Olathe, Kansas.
           </p>
         </div>
 
         <div className="footer-section">
           <h3>Navigation</h3>
-          <a href="/">Home</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/services">Services</a>
-          <a href="/quote">Get a Quote</a>
+          <Link to="/">Home</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/quote">Get a Quote</Link>
         </div>
 
         <div className="footer-section">
@@ -31,8 +33,8 @@ function Footer() {
         <p>© 2026 KCSTANCESHOP LLC. All rights reserved.</p>
 
         <div className="footer-bottom-links">
-          <a href="#">Call: +1 (913)-111-1111</a>
-          <a href="#">Email: KCSTANCESHOP@EXPAMLE.com</a>
+          <a href="tel:+19132868020">Call: (913) 286-8020</a>
+          <a href="mailto:kcstanceshop@gmail.com">kcstanceshop@gmail.com</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
         </div>

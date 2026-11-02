@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import "./Services.css";
 
 const services = [
@@ -43,6 +44,10 @@ const services = [
 export default function Services() {
   return (
     <main className="services-page">
+      <SEO
+        title="Vehicle Wrap, Window Tint & Suspension Services | KCSTANCESHOP"
+        description="Explore vehicle wraps, window tint, suspension installations, and exterior upgrades at KCSTANCESHOP in Olathe, KS, serving the Kansas City area."
+      />
       <header className="services-header container">
         <span className="section-label">KC STANCE SHOP</span>
 
@@ -63,7 +68,12 @@ export default function Services() {
             key={service.title}
           >
             <div className="service-image">
-              <img src={service.image} alt={service.alt} loading="lazy" />
+              <img
+                src={service.image}
+                alt={service.alt}
+                loading="lazy"
+                decoding="async"
+              />
               <span className="service-index">
                 {String(index + 1).padStart(2, "0")}
               </span>

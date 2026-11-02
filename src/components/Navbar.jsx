@@ -1,50 +1,42 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
-
-const link = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "About", href: "/about" },
-  { name: "Get a Quote", href: "/quote" },
-];
 
 export default function Navbar() {
   return (
     <header className="header">
       <nav className="navbar">
-        <a href="/" className="logo-link">
+        <Link to="/" className="logo-link">
           <img
             src="https://kcstanceshop.com/wp-content/uploads/2025/07/b010e7a5-1aa0-4482-ba5b-ecf2824e0f7c-1024x531.png"
             alt="KCSTANCESHOP"
             className="logo"
           />
-        </a>
+        </Link>
         <ul>
           <li>
-            <a className="nav-link" href="/">
+            <Link className="nav-link" to="/">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="nav-link" href="/services">
+            <Link className="nav-link" to="/services">
               Services
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="nav-link" id="senter" href="/gallery">
+            <Link className="nav-link" id="senter" to="/gallery">
               Gallery
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="nav-link" href="/about">
+            <Link className="nav-link" to="/about">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="nav-link" href="/quote">
+            <Link className="nav-link" to="/quote">
               Book Now!
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import "./Home.css";
 
 const services = [
@@ -79,6 +81,10 @@ export default function Home() {
   }, []);
   return (
     <main className="home">
+      <SEO
+        title="Vehicle Wraps, Window Tint & Stance | KCSTANCESHOP — Olathe, KS"
+        description="KCSTANCESHOP offers custom vehicle wraps, window tint, and suspension upgrades in Olathe, KS, serving Kansas City drivers. Start your build today."
+      />
       {/* Hero */}
       <section className="home-hero">
         <div className="hero-content">
@@ -91,18 +97,18 @@ export default function Home() {
           </h1>
 
           <p>
-            From custom wraps to the perfect stance, we help bring your vision
-            for your vehicle to life.
+            KCSTANCESHOP in Olathe, KS offers custom wraps, window tint, and
+            suspension upgrades for drivers across the Kansas City area.
           </p>
 
           <div className="hero-actions">
-            <a href="/services" className="btn btn-primary">
+            <Link to="/services" className="btn btn-primary">
               Explore Services <span>↗</span>
-            </a>
+            </Link>
 
-            <a href="/gallery" className="btn btn-secondary">
+            <Link to="/gallery" className="btn btn-secondary">
               View Our Work
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -161,9 +167,9 @@ export default function Home() {
             </h2>
           </div>
 
-          <a href="/gallery" className="text-link">
+          <Link to="/gallery" className="text-link">
             View All Projects ↗
-          </a>
+          </Link>
         </div>
 
         <div className="gallery-list">
@@ -178,6 +184,7 @@ export default function Home() {
                   src={`/gallery/${item.image}`}
                   alt={item.title}
                   loading="lazy"
+                  decoding="async"
                   style={{ objectPosition: item.position || "center" }}
                 />
                 <span>{item.number}</span>
@@ -206,9 +213,9 @@ export default function Home() {
           Have a vision for your vehicle? Let's talk about making it happen.
         </p>
 
-        <a href="/quote" className="btn btn-primary">
+        <Link to="/quote" className="btn btn-primary">
           Get a Quote <span>↗</span>
-        </a>
+        </Link>
       </section>
     </main>
   );

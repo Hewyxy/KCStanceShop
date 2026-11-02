@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import "./Gallery.css";
 
 const projects = [
@@ -71,6 +72,10 @@ export default function Gallery() {
 
   return (
     <main className="gallery-page">
+      <SEO
+        title="Custom Vehicle Wraps & Stance Gallery | KCSTANCESHOP"
+        description="See custom wraps, window tint, suspension, and exterior projects completed by KCSTANCESHOP in Olathe, Kansas. Browse our vehicle restyling gallery."
+      />
       <header className="gallery-header container">
         <span className="section-label">KC STANCE SHOP / OUR WORK</span>
 
@@ -119,6 +124,7 @@ export default function Gallery() {
                   src={project.image}
                   alt={project.alt}
                   loading="lazy"
+                  decoding="async"
                   style={{ objectPosition: project.position || "center" }}
                 />
 
@@ -188,7 +194,11 @@ export default function Gallery() {
             className="gallery-lightbox-content"
             onClick={(event) => event.stopPropagation()}
           >
-            <img src={selectedProject.image} alt={selectedProject.alt} />
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.alt}
+              decoding="async"
+            />
 
             <div className="gallery-lightbox-caption">
               <span>{selectedProject.category}</span>
