@@ -94,7 +94,7 @@ export default function Services() {
               </div>
 
               <Link to="/quote" className="service-link">
-                DISCUSS YOUR BUILD <span>↗</span>
+                DISCUSS YOUR BUILD <span>↗︎</span>
               </Link>
             </div>
           </article>

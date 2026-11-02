@@ -80,7 +80,7 @@ export default function About() {
           </p>
 
           <Link to="/services" className="service-link">
-            EXPLORE OUR SERVICES <span>↗</span>
+            EXPLORE OUR SERVICES <span>↗︎</span>
           </Link>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function About() {
                 <p>{value.description}</p>
               </div>
 
-              <span className="about-value-arrow">↗</span>
+              <span className="about-value-arrow">↗︎</span>
             </article>
           ))}
         </div>
@@ -128,7 +128,7 @@ export default function About() {
         <p>Tell us what you have in mind. Let's talk about your next build.</p>
 
         <Link to="/quote" className="btn btn-primary">
-          GET A QUOTE <span>↗</span>
+          GET A QUOTE <span>↗︎</span>
         </Link>
       </section>
     </main>

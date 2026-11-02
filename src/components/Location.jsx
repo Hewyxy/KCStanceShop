@@ -10,7 +10,7 @@ function Location() {
           target="_blank"
           rel="noreferrer"
         >
-          Get Directions →
+          Get Directions →︎
         </a>
       </div>
 

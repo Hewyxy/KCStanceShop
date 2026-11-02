@@ -138,7 +138,7 @@ export default function Gallery() {
                   </span>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  <span className="gallery-project-open">VIEW ↗</span>
+                  <span className="gallery-project-open">VIEW ↗︎</span>
                 </div>
               </div>
 
@@ -150,7 +150,7 @@ export default function Gallery() {
                   <h2>{project.title}</h2>
                 </div>
 
-                <span className="gallery-project-arrow">↗</span>
+                <span className="gallery-project-arrow">↗︎</span>
               </div>
             </button>
           ))}
@@ -169,7 +169,7 @@ export default function Gallery() {
         <p>Let's talk about the next step for your vehicle.</p>
 
         <Link to="/quote" className="btn btn-primary">
-          GET A QUOTE <span>↗</span>
+          GET A QUOTE <span>↗︎</span>
         </Link>
       </section>
 

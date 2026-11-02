@@ -381,7 +381,7 @@ export default function Quote() {
               disabled={sending}
             >
               {sending ? "SENDING REQUEST..." : "SEND QUOTE REQUEST"}
-              {!sending && <span>↗</span>}
+              {!sending && <span>↗︎</span>}
             </button>
           </form>
         </div>

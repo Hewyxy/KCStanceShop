@@ -103,7 +103,7 @@ export default function Home() {
 
           <div className="hero-actions">
             <Link to="/services" className="btn btn-primary">
-              Explore Services <span>↗</span>
+              Explore Services <span>↗︎</span>
             </Link>
 
             <Link to="/gallery" className="btn btn-secondary">
@@ -150,7 +150,7 @@ export default function Home() {
                 className="service-arrow"
                 aria-label={`Request a quote for ${service.title}`}
               >
-                ↗
+                ↗︎
               </a>
             </article>
           ))}
@@ -168,7 +168,7 @@ export default function Home() {
           </div>
 
           <Link to="/gallery" className="text-link">
-            View All Projects ↗
+            View All Projects ↗︎
           </Link>
         </div>
 
@@ -192,7 +192,7 @@ export default function Home() {
 
               <div className="gallery-caption">
                 <h3>{item.title}</h3>
-                <span>↗</span>
+                <span>↗︎</span>
               </div>
             </a>
           ))}
@@ -214,7 +214,7 @@ export default function Home() {
         </p>
 
         <Link to="/quote" className="btn btn-primary">
-          Get a Quote <span>↗</span>
+          Get a Quote <span>↗︎</span>
         </Link>
       </section>
     </main>

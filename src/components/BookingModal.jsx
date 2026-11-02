@@ -326,7 +326,7 @@ export default function BookingModal({ isOpen, onClose, vehicleType }) {
                     sending || loadingSlots || !selectedSlot || !serviceId
                   }
                 >
-                  {sending ? "SUBMITTING..." : "REQUEST APPOINTMENT ↗"}
+                  {sending ? "SUBMITTING..." : "REQUEST APPOINTMENT ↗︎"}
                 </button>
 
                 <p className="booking-hint">
